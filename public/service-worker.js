@@ -1,6 +1,8 @@
 
+// Name of the cache. Change it when you update the files
 const CACHE_NAME = "pwa-v1";
 
+// Files saved for offline use
 const FILES = [
   "/",
   "/index.html",
