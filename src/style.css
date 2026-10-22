@@ -1,50 +1,86 @@
-/* Colors, fonts and other values used everywhere */
+/* Цвета и шрифт приложения. Переменные используются ниже через var(...) */
 :root {
   --text: #6b6375;
-  --text-h: #08060d;
   --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
   --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
   --shadow:
     rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
-
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
+  font: 18px/145% system-ui, 'Segoe UI', Roboto, sans-serif;
   color: var(--text);
   background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 
+  /* На телефонах и планшетах шрифт чуть меньше */
   @media (max-width: 1024px) {
     font-size: 16px;
   }
 }
 
+/* Основной контейнер: по центру, не шире 800px */
 .dog-app {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
 }
 
+/* Большое фото собаки */
 #dog-image {
   width: 100%;
-  border-radius: 30%;
+  border-radius: 5%;
   box-shadow: var(--shadow);
 }
 
+/* Сетка избранного: колонки сами подстраиваются под ширину экрана */
 #favorites-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
   gap: 12px;
+}
+
+/* Ряд кнопок под фото */
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.actions button {
+  flex: 1;
+  padding: 10px 16px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Сообщения (ошибка, "Сохранено") */
+#status {
+  min-height: 1.5em;
+}
+
+/* Карточка в избранном: position нужен, чтобы поставить кнопку ✕ в угол */
+.favorite-item {
+  position: relative;
+}
+
+.favorite-item img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.favorite-item button {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  cursor: pointer;
 }
