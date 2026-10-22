@@ -1,7 +1,7 @@
 
 // Кеш с файлами приложения (HTML, JS, CSS, иконки).
 // Меняй имя (v3, v4...) при каждом обновлении приложения: так браузер скачает свежие файлы
-const CACHE_NAME = "pwa-v3";
+const CACHE_NAME = "pwa-v4";
 
 // Кеш с фото из избранного. Имя НЕ меняем и не удаляем при обновлении.
 // Должно совпадать с PHOTOS_CACHE в src/main.js
@@ -12,11 +12,11 @@ const DOG_IMAGES_HOST = "images.dog.ceo";
 
 // Files saved for offline use
 const FILES = [
-  "/",
-  "/index.html",
-  "/manifest.json",
-  "/icons/icon-192.png",
-  "/icons/icon-512.png"
+  "./",
+  "./index.html",
+  "./manifest.json",
+  "./icons/icon-192.png",
+  "./icons/icon-512.png"
 ];
 
 // Save files in the cache
